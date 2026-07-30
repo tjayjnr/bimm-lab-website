@@ -308,6 +308,25 @@ section + section {
   margin-top: 1.25rem;
 }
 
+.alumni-entry {
+  border-top: 3px solid var(--color-teal);
+  border-radius: 0 0 6px 6px;
+}
+
+.alumni-degree {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 0 0 0.6rem;
+}
+
+.alumni-thesis {
+  font-style: italic;
+  color: var(--color-ink-soft);
+  margin: 0 0 0.75rem;
+}
+
 .address-block {
   font-style: normal;
   background: var(--color-panel);
@@ -474,6 +493,11 @@ ol.plain li {
   margin-bottom: 0.6rem;
 }
 
+.roster-note {
+  color: var(--color-ink-soft);
+  font-size: 0.92em;
+}
+
 /* Course cards on teaching page */
 .course {
   border-top: 3px solid var(--color-teal);
@@ -565,6 +589,36 @@ ol.plain li {
   font-style: italic;
 }
 
+/* News */
+.news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.news-item {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--color-bg-alt);
+}
+
+.news-item:last-child {
+  border-bottom: none;
+}
+
+.news-item p:last-child {
+  margin: 0;
+}
+
+.news-date {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-teal);
+  margin: 0 0 0.4rem;
+}
+
 /* Generic placeholder pages */
 .coming-soon {
   border: 1px dashed var(--color-rule);
@@ -612,20 +666,35 @@ ol.plain li {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: 0.9rem 1rem;
+  justify-content: space-between;
+  gap: 1.5rem 2rem;
+  max-width: 60rem;
+  margin: 0 auto;
 }
 
 .sponsor-logos li {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1 1 11rem;
+  min-width: 9rem;
 }
 
 .sponsor-logos img {
-  height: 2.75rem;
-  width: auto;
-  max-width: 10rem;
+  height: auto;
+  width: 100%;
+  max-width: 15rem;
+  max-height: 6rem;
+  object-fit: contain;
+}
+
+@media (max-width: 640px) {
+  .sponsor-logos li {
+    flex: 1 1 40%;
+  }
+  .sponsor-logos img {
+    max-height: 4.5rem;
+  }
 }
 
 .sponsor-placeholder {
