@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BIMM Lab — Bio-Inspired Multifunctional Materials Laboratory | New Mexico Tech</title>
-<meta name="description" content="The Bio-Inspired Multifunctional Materials Laboratory (BIMM Lab) at New Mexico Tech develops fluid-filled composite materials inspired by biological structures for radiation shielding, space habitat protection, and related applications.">
+<title>Contact — BIMM Lab | New Mexico Tech</title>
+<meta name="description" content="Contact the Bio-Inspired Multifunctional Materials Laboratory at New Mexico Tech.">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -18,7 +18,7 @@
     </a>
     <nav class="top-nav" aria-label="Main navigation">
       <ul class="nav-list">
-    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="research.html">Research</a></li>
     <li><a href="publications.html">Publications</a></li>
     <li><a href="teaching.html">Teaching</a></li>
@@ -40,64 +40,50 @@
   </div>
 </header>
 
-<div class="page-hero page-hero--video">
-  <video class="hero-video" autoplay muted loop playsinline poster="assets/img/homepage-hero-poster.jpg">
-    <source src="assets/video/homepage-hero.mp4" type="video/mp4">
-  </video>
+<div class="page-hero">
   <div class="page-hero-inner">
-    <p class="hero-eyebrow">Mechanical Engineering Department &middot; New Mexico Tech</p>
-    <h1>BIMM Lab</h1>
-    <p class="hero-sub">Bio-Inspired Multifunctional Materials Laboratory</p>
+    <h1>Contact</h1>
   </div>
 </div>
 
 <main id="main-content">
   <div class="wrap">
     <p class="page-lede">
-      We develop fluid-filled composite materials inspired by biological
-      structures &mdash; engineering the way nature layers, channels, and
-      circulates fluids within tissue into materials with structural,
-      thermal, and radiation-shielding function built in from the start.
+      Have a question about our research, courses, or opportunities to
+      join the lab? We&rsquo;d love to hear from you.
     </p>
 
     <section>
-      <h2>What we work on</h2>
+      <h2>Email</h2>
       <p>
-        Our research centers on the mechanics of fluid-filled multifunctional
-        composites: panels and structures that carry mechanical load while
-        also shielding against radiation, managing heat, or performing other
-        secondary functions &mdash; much as biological structures accomplish
-        several jobs at once with a single tissue system. Current
-        applications include radiation shielding, protective structures for
-        space habitats, and biomimetic heat-transfer components for
-        spaceflight.
+        For general questions or more information about the lab, email
+        Dr. Ghosh directly at
+        <a href="mailto:ashok.ghosh@nmt.edu">ashok.ghosh@nmt.edu</a>.
       </p>
     </section>
 
-    <hr class="rule">
-
     <section>
-      <h2>Where to find us</h2>
-      <address class="address-block">
-        <strong>BIMM Lab</strong>
-        Workman Building, Rooms 158 &amp; 156<br>
-        801 Leroy Pl<br>
-        Socorro, NM 87801
-      </address>
-    </section>
-
-    <section>
-      <h2>Learn more</h2>
-      <p>
-        Read about our current focus areas on the
-        <a href="research.html">Research</a> page, or meet the lab&rsquo;s
-        principal investigator and members on the
-        <a href="people.html">People</a> page.
+      <h2>Send an Inquiry</h2>
+      <form id="contact-form" class="contact-form">
+        <div class="form-field">
+          <label for="cf-name">Name</label>
+          <input type="text" id="cf-name" name="name" required>
+        </div>
+        <div class="form-field">
+          <label for="cf-email">Your Email</label>
+          <input type="email" id="cf-email" name="email" required>
+        </div>
+        <div class="form-field">
+          <label for="cf-message">Question or Inquiry</label>
+          <textarea id="cf-message" name="message" rows="6" required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary">Send Inquiry</button>
+      </form>
+      <p class="form-note">
+        Sending opens your email app with this message addressed to
+        Dr. Ghosh &mdash; nothing is submitted silently or stored on this
+        site.
       </p>
-      <div class="button-row">
-        <a class="btn btn--primary" href="research.html">Explore our research</a>
-        <a class="btn" href="people.html">Meet the team</a>
-      </div>
     </section>
   </div>
 </main>
@@ -117,5 +103,6 @@
 </footer>
 
 <script src="js/nav.js"></script>
+<script src="js/contact-form.js"></script>
 </body>
 </html>
