@@ -18,7 +18,7 @@
   --color-teal: #24504b;
   --color-focus: #1d6f63;
 
-  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "URW Palladio", Georgia, serif;
+  --font-display: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "URW Palladio", serif;
   --font-body: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 
   --max-content: 46rem;
@@ -134,7 +134,16 @@ button:focus-visible,
   border-radius: 1px;
 }
 
+.site-header .badge {
+  height: 2.1rem;
+  width: auto;
+  flex: none;
+}
+
 .site-header .wordmark {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 600;
