@@ -853,10 +853,14 @@ ol.plain li {
 
 .page-hero--openings {
   background-image: url("../assets/img/openings-campus.jpg");
-  background-position: center;
+  background-position: center 76%;
   min-height: 20rem;
   display: flex;
   align-items: center;
+}
+
+.page-hero--openings .page-hero-inner {
+  width: 100%;
 }
 
 @media (max-width: 600px) {
