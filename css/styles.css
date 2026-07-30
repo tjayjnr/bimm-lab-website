@@ -841,6 +841,9 @@ ol.plain li {
   background-image: url("../assets/img/research-sem-composite.jpg");
   background-size: cover;
   background-position: center;
+  min-height: 20rem;
+  display: flex;
+  align-items: center;
 }
 
 .page-hero--photo::before {
@@ -853,7 +856,13 @@ ol.plain li {
 
 .page-hero--openings {
   background-image: url("../assets/img/openings-campus.jpg");
-  background-position: center 85%;
+  background-position: center 76%;
+}
+
+@media (max-width: 600px) {
+  .page-hero--photo {
+    min-height: 16rem;
+  }
 }
 
 .page-hero--photo .hero-sub {
