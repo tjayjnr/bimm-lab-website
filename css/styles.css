@@ -416,6 +416,40 @@ section + section {
   line-height: 1.5;
 }
 
+.media-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 1.5rem 0 0;
+  align-items: start;
+}
+
+.media-row-item {
+  margin: 0;
+}
+
+.media-row-item img,
+.media-row-item video {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--color-rule);
+  border-radius: 6px;
+  background: var(--color-ink);
+}
+
+.media-row-item figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--color-ink-faint);
+  line-height: 1.5;
+}
+
+@media (max-width: 800px) {
+  .media-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* People / profile */
 .profile-header {
   display: flex;
