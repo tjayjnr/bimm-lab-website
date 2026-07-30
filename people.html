@@ -11,44 +11,34 @@
 <a class="skip-link" href="#main-content">Skip to content</a>
 
 <header class="site-header">
-  <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-panel">
-    <span></span><span></span><span></span>
-  </button>
-  <a class="wordmark" href="index.html">BIMM Lab<small>New Mexico Tech &middot; Mechanical Engineering</small></a>
-</header>
-
-<div class="nav-overlay" hidden></div>
-
-<nav id="nav-panel" class="nav-panel" aria-hidden="true" aria-label="Main navigation">
-  <button class="nav-close" aria-label="Close menu">&times;</button>
-  <div class="nav-brand">
-    <strong>BIMM Lab</strong>
-    <span>Bio-Inspired Multifunctional Materials Laboratory</span>
-  </div>
-  <ul class="nav-list">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <img class="badge" src="assets/img/nmt-logo.png" alt="New Mexico Tech logo">
+      <span class="brand-text">BIMM Lab<small>Bio-Inspired Multifunctional Materials Laboratory</small></span>
+    </a>
+    <nav class="top-nav" aria-label="Main navigation">
+      <ul class="nav-list">
     <li><a href="index.html">Home</a></li>
     <li><a href="research.html">Research</a></li>
     <li><a href="publications.html">Publications</a></li>
     <li><a href="teaching.html">Teaching</a></li>
     <li><a href="people.html" class="active">People</a></li>
-    <li class="has-submenu">
-      <button class="submenu-toggle" aria-expanded="false" aria-controls="openings-submenu">
-        Openings <span class="chevron" aria-hidden="true">&#9662;</span>
-      </button>
-      <ul id="openings-submenu" class="submenu" hidden>
-        <li><a href="openings.html#graduate">Graduate Positions</a></li>
-        <li><a href="openings.html#undergraduate">Undergraduate Positions</a></li>
-      </ul>
-    </li>
+        <li class="has-dropdown">
+          <button class="dropdown-toggle" aria-expanded="false" aria-controls="openings-menu">
+            Openings <span class="chevron" aria-hidden="true">&#9662;</span>
+          </button>
+          <ul id="openings-menu" class="dropdown-menu" hidden>
+            <li><a href="openings.html#graduate">Graduate Positions</a></li>
+            <li><a href="openings.html#undergraduate">Undergraduate Positions</a></li>
+          </ul>
+        </li>
     <li><a href="news.html">News</a></li>
     <li><a href="media.html">Media</a></li>
     <li><a href="parents.html">Parents</a></li>
-  </ul>
-  <div class="nav-panel-footer">
-    Workman Building, Rooms 158 &amp; 156<br>
-    New Mexico Tech, Socorro, NM
+      </ul>
+    </nav>
   </div>
-</nav>
+</header>
 
 <main id="main-content">
   <div class="wrap">
@@ -208,7 +198,16 @@
 </main>
 
 <footer class="site-footer">
-  &copy; 2026 Bio-Inspired Multifunctional Materials Laboratory &middot; Mechanical Engineering Department, New Mexico Tech
+  <div class="sponsors">
+    <p class="sponsors-label">Research Supported By</p>
+    <ul class="sponsor-logos">
+      <li><span class="sponsor-placeholder">NSF <span class="todo-flag">TODO: logo</span></span></li>
+      <li><span class="sponsor-placeholder">NASA <span class="todo-flag">TODO: logo</span></span></li>
+      <li><span class="sponsor-placeholder">New Mexico Consortium <span class="todo-flag">TODO: logo</span></span></li>
+      <li><span class="sponsor-placeholder">New Mexico Space Grant Consortium <span class="todo-flag">TODO: logo</span></span></li>
+    </ul>
+  </div>
+  <p class="copyright">&copy; 2026 Bio-Inspired Multifunctional Materials Laboratory &middot; Mechanical Engineering Department, New Mexico Tech</p>
 </footer>
 
 <script src="js/nav.js"></script>

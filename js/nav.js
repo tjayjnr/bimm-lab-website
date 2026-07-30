@@ -1,107 +1,59 @@
 /**
- * BIMM Lab shared off-canvas navigation.
- * Handles open/close, outside-click, Escape, focus trap, and the
- * Openings submenu disclosure. Included on every page.
+ * BIMM Lab shared navigation.
+ * Handles the "Openings" dropdown in the horizontal top nav: click to
+ * toggle, Escape to close, click outside to close, keyboard accessible.
+ * Included on every page.
  */
 (function () {
   "use strict";
 
   document.addEventListener("DOMContentLoaded", function () {
-    var hamburger = document.querySelector(".hamburger");
-    var panel = document.getElementById("nav-panel");
-    var overlay = document.querySelector(".nav-overlay");
-    var closeBtn = document.querySelector(".nav-close");
+    var toggle = document.querySelector(".dropdown-toggle");
+    if (!toggle) return;
 
-    if (!hamburger || !panel || !overlay || !closeBtn) return;
+    var menu = document.getElementById(toggle.getAttribute("aria-controls"));
+    if (!menu) return;
 
-    var lastFocused = null;
-
-    function focusableElements() {
-      return Array.prototype.slice.call(
-        panel.querySelectorAll(
-          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
-        )
-      ).filter(function (el) {
-        return el.offsetParent !== null;
-      });
+    function isOpen() {
+      return toggle.getAttribute("aria-expanded") === "true";
     }
 
-    function openNav() {
-      lastFocused = document.activeElement;
-      panel.classList.add("open");
-      overlay.classList.add("visible");
-      overlay.hidden = false;
-      panel.setAttribute("aria-hidden", "false");
-      hamburger.setAttribute("aria-expanded", "true");
-      document.body.classList.add("nav-open");
-      closeBtn.focus();
+    function openMenu() {
+      toggle.setAttribute("aria-expanded", "true");
+      menu.hidden = false;
+      document.addEventListener("click", onDocumentClick);
       document.addEventListener("keydown", onKeydown);
     }
 
-    function closeNav() {
-      panel.classList.remove("open");
-      overlay.classList.remove("visible");
-      panel.setAttribute("aria-hidden", "true");
-      hamburger.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("nav-open");
+    function closeMenu(focusToggle) {
+      toggle.setAttribute("aria-expanded", "false");
+      menu.hidden = true;
+      document.removeEventListener("click", onDocumentClick);
       document.removeEventListener("keydown", onKeydown);
-      window.setTimeout(function () {
-        overlay.hidden = true;
-      }, 250);
-      if (lastFocused) {
-        lastFocused.focus();
-      } else {
-        hamburger.focus();
-      }
+      if (focusToggle) toggle.focus();
     }
 
-    function isOpen() {
-      return panel.classList.contains("open");
+    function onDocumentClick(e) {
+      if (!toggle.parentElement.contains(e.target)) {
+        closeMenu(false);
+      }
     }
 
     function onKeydown(e) {
       if (e.key === "Escape" || e.key === "Esc") {
         e.preventDefault();
-        closeNav();
-        return;
-      }
-      if (e.key === "Tab") {
-        var focusable = focusableElements();
-        if (focusable.length === 0) return;
-        var first = focusable[0];
-        var last = focusable[focusable.length - 1];
-
-        if (e.shiftKey && document.activeElement === first) {
-          e.preventDefault();
-          last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault();
-          first.focus();
-        }
+        closeMenu(true);
       }
     }
 
-    hamburger.addEventListener("click", function () {
-      isOpen() ? closeNav() : openNav();
+    toggle.addEventListener("click", function () {
+      isOpen() ? closeMenu(false) : openMenu();
     });
 
-    closeBtn.addEventListener("click", closeNav);
-    overlay.addEventListener("click", closeNav);
-
-    panel.querySelectorAll(".nav-list a").forEach(function (link) {
-      link.addEventListener("click", closeNav);
-    });
-
-    var submenuToggle = panel.querySelector(".submenu-toggle");
-    if (submenuToggle) {
-      var submenu = document.getElementById(
-        submenuToggle.getAttribute("aria-controls")
-      );
-      submenuToggle.addEventListener("click", function () {
-        var expanded = submenuToggle.getAttribute("aria-expanded") === "true";
-        submenuToggle.setAttribute("aria-expanded", String(!expanded));
-        if (submenu) submenu.hidden = expanded;
+    menu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        closeMenu(false);
       });
-    }
+    });
   });
 })();
