@@ -418,7 +418,7 @@ section + section {
 
 .media-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
   margin: 1.5rem 0 0;
   align-items: start;
@@ -442,6 +442,24 @@ section + section {
   font-size: 0.85rem;
   color: var(--color-ink-faint);
   line-height: 1.5;
+}
+
+.media-row--fixed-height .media-row-item img {
+  height: 22rem;
+  object-fit: contain;
+  background: var(--color-panel);
+}
+
+.media-row--fixed-height .media-row-item video {
+  height: 22rem;
+  object-fit: cover;
+}
+
+@media (max-width: 800px) {
+  .media-row--fixed-height .media-row-item img,
+  .media-row--fixed-height .media-row-item video {
+    height: auto;
+  }
 }
 
 @media (max-width: 800px) {
@@ -700,6 +718,29 @@ ol.plain li {
   border-radius: 6px;
 }
 
+.media-pair-images {
+  display: flex;
+  gap: 2px;
+  height: 16rem;
+  overflow: hidden;
+  border: 1px solid var(--color-rule);
+  border-radius: 6px;
+}
+
+.media-pair-images img {
+  flex: 1 1 0;
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  border-radius: 0;
+}
+
+.media-pair-shift-up {
+  object-position: top;
+}
+
 .media-photo figcaption {
   margin-top: 0.65rem;
   font-size: 0.9rem;
@@ -887,20 +928,27 @@ ol.plain li {
 
 .page-hero--openings {
   background-image: url("../assets/img/openings-campus.jpg");
-  background-position: center 76%;
-  min-height: 20rem;
-  display: flex;
-  align-items: center;
+  background-position: center;
 }
 
-.page-hero--openings .page-hero-inner {
-  width: 100%;
+.page-hero--teaching {
+  background-image: url("../assets/img/teaching-hero.jpg");
+  background-position: center;
 }
 
-@media (max-width: 600px) {
-  .page-hero--openings {
-    min-height: 16rem;
-  }
+.page-hero--publications {
+  background-image: url("../assets/img/publications-hero.jpg");
+  background-position: center;
+}
+
+.page-hero--alumni {
+  background-image: url("../assets/img/alumni-hero.jpg");
+  background-position: center;
+}
+
+.page-hero--news {
+  background-image: url("../assets/img/news-hero.jpg");
+  background-position: center;
 }
 
 .page-hero--photo .hero-sub {
