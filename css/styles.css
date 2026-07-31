@@ -424,6 +424,11 @@ section + section {
   align-items: start;
 }
 
+.media-row--small {
+  max-width: 38rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
 .media-row-item {
   margin: 0;
 }
