@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BIMM Lab — Bio-Inspired Multifunctional Materials Laboratory | New Mexico Tech</title>
 <meta name="description" content="The Bio-Inspired Multifunctional Materials Laboratory (BIMM Lab) at New Mexico Tech develops fluid-filled composite materials inspired by biological structures for radiation shielding, space habitat protection, and related applications.">
-<link rel="stylesheet" href="css/styles.css?v=5">
+<link rel="stylesheet" href="css/styles.css?v=6">
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -37,8 +37,26 @@
     <li><a href="media.html">Media</a></li>
       </ul>
     </nav>
+    <button class="search-toggle" aria-label="Search" aria-expanded="false" aria-controls="search-panel">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </button>
   </div>
 </header>
+
+<div class="search-overlay" hidden></div>
+<div class="search-panel" id="search-panel" role="dialog" aria-modal="true" aria-label="Search" aria-hidden="true">
+  <div class="search-panel-inner">
+    <div class="search-panel-header">
+      <input type="search" id="search-input" class="search-input" placeholder="Search the site&hellip;" autocomplete="off" aria-label="Search query">
+      <button class="search-close" aria-label="Close search">&times;</button>
+    </div>
+    <ul id="search-results" class="search-results"></ul>
+    <p id="search-empty" class="search-empty" hidden>No results found for that search.</p>
+  </div>
+</div>
 
 <div class="page-hero page-hero--video">
   <video class="hero-video" autoplay muted loop playsinline poster="assets/img/homepage-hero-poster.jpg">
@@ -116,5 +134,7 @@
 </footer>
 
 <script src="js/nav.js"></script>
+<script src="js/search-index.js"></script>
+<script src="js/search.js"></script>
 </body>
 </html>
