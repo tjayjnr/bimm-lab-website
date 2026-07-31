@@ -409,6 +409,10 @@ section + section {
   margin: 0 auto;
 }
 
+.page-figure--small figcaption {
+  text-align: center;
+}
+
 @media (max-width: 700px) {
   .page-figure--half img {
     width: 100%;
@@ -961,6 +965,11 @@ ol.plain li {
 
 .page-hero--news {
   background-image: url("../assets/img/news-hero.jpg");
+  background-position: center;
+}
+
+.page-hero--media {
+  background-image: url("../assets/img/media-hero.jpg");
   background-position: center;
 }
 
