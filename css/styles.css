@@ -1059,12 +1059,17 @@ ol.plain li {
 }
 
 /* Site search */
+.nav-search-group {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 .search-toggle {
   appearance: none;
   background: transparent;
   border: 1px solid transparent;
   padding: 0.5rem;
-  margin-left: 0.25rem;
   border-radius: 4px;
   cursor: pointer;
   display: flex;
