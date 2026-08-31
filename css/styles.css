@@ -423,7 +423,14 @@ section + section {
   margin: 0 auto;
 }
 
-.page-figure--small figcaption {
+.page-figure--medium img {
+  width: 100%;
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
+.page-figure--small figcaption,
+.page-figure--medium figcaption {
   text-align: center;
 }
 
