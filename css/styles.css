@@ -402,6 +402,19 @@ section + section {
   margin: 0 0 0.75rem;
 }
 
+.partner-list {
+  list-style: disc;
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.6rem 2rem;
+}
+
+.partner-list li {
+  margin: 0;
+}
+
 .page-figure {
   margin: 1.5rem 0 0;
 }
