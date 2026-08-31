@@ -388,6 +388,18 @@ section + section {
   font-size: 1.15rem;
 }
 
+.collab-role {
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 0 0 0.2rem;
+}
+
+.collab-org {
+  font-size: 0.85rem;
+  color: var(--color-ink-faint);
+  margin: 0 0 0.75rem;
+}
+
 .page-figure {
   margin: 1.5rem 0 0;
 }
