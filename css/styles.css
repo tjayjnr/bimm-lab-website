@@ -542,6 +542,14 @@ section + section {
   font-size: 2.25rem;
 }
 
+.profile-header .avatar-photo {
+  width: 8.5rem;
+  height: 8.5rem;
+  flex: none;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
 .profile-header .who h2 {
   margin: 0 0 0.15rem;
   font-size: 1.6rem;
@@ -627,6 +635,66 @@ ol.plain li {
 .roster-note {
   color: var(--color-ink-soft);
   font-size: 0.92em;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.25rem;
+}
+
+.team-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: var(--color-panel);
+  border: 1px solid var(--color-rule);
+  border-radius: 6px;
+  padding: 1.1rem;
+}
+
+.team-avatar {
+  width: 4.5rem;
+  height: 4.5rem;
+  flex: none;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.team-avatar--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(155deg, var(--color-teal), var(--color-ink));
+  color: #f1ece1;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+}
+
+.team-info h4 {
+  margin: 0 0 0.2rem;
+  font-size: 1.05rem;
+}
+
+.team-info h4 a {
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.team-info h4 a:hover {
+  color: var(--color-accent-dark);
+  text-decoration: underline;
+}
+
+.team-info .collab-role {
+  font-size: 0.85rem;
+  margin: 0 0 0.3rem;
+}
+
+.team-bio-link {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 /* Course cards on teaching page */
